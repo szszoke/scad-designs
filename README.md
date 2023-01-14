@@ -9,6 +9,6 @@ I use VS Code for editing with the [OpenSCAD Language Support](https://marketpla
 I then use [OpenSCAD](https://openscad.org/) configured to re-render when the opened file changes.
 
 # Examples
-![Music table](music_table.png)
-![19 inch rack unit stand](rack_stand.png)
-![Elektron trinity and some more](elektron_trinity_plus.png)
+![Music table](images/music_table.png)
+![19 inch rack unit stand](images/rack_stand.png)
+![Elektron trinity and some more](images/elektron_trinity_plus.png)
