@@ -1,5 +1,3 @@
-nothing = 0.01;
-
 use <modules/beam.scad>
 use <modules/elektron.scad>
 use <modules/presonus.scad>
