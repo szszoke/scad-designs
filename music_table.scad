@@ -4,9 +4,9 @@ use <modules/presonus.scad>
 use <modules/rack.scad>
 use <modules/rotate.scad>
 
-table_width = 1600;
-table_depth = 800;
-table_height = 20;
+tabletop_width = 1600;
+tabletop_depth = 800;
+tabletop_height = 20;
 
 frame_beam_long_side = 33;
 frame_beam_short_side = 21;
@@ -15,8 +15,8 @@ rack_depth = 370;
 rack_enclosure_width = rack_unit_width() + 2 * frame_beam_short_side;
 
 module tabletop() {
-  color("white") translate([ 0, 0, -table_height ])
-      cube([ table_width, table_depth, table_height ]);
+  color("white") translate([ 0, 0, -tabletop_height ])
+      cube([ tabletop_width, tabletop_depth, tabletop_height ]);
 }
 
 module speakers() {
@@ -35,7 +35,7 @@ module speakers() {
       rotate_about(a = 30, pv = speaker_center) speaker_on_stand();
 
   color("#525252")
-      translate([ table_width - speaker_width - 20, 250, 0 ])
+      translate([ tabletop_width - speaker_width - 20, 250, 0 ])
           rotate_about(a = -30, pv = speaker_center)
               speaker_on_stand();
 }
@@ -51,7 +51,7 @@ module elektron_boxes() {
 }
 
 module rack_enclosures(spacing_from_surface) {
-  translate(v = [ 0, table_depth - rack_depth, 0 ]) {
+  translate(v = [ 0, tabletop_depth - rack_depth, 0 ]) {
     rack_enclosure(units = 8, tilt_angle = 10, depth = rack_depth,
                    spacing_from_surface = spacing_from_surface,
                    beam_long_side = frame_beam_long_side,
@@ -80,11 +80,11 @@ module rack_enclosures(spacing_from_surface) {
 tabletop();
 speakers();
 
-translate([ (table_width - 2 * rack_enclosure_width) / 2, 0, 0 ])
+translate([ (tabletop_width - 2 * rack_enclosure_width) / 2, 0, 0 ])
     rack_enclosures(290);
 
-translate([ (table_width - 4 * 215 - 10) / 2, 210, 100 ])
+translate([ (tabletop_width - 4 * 215 - 10) / 2, 210, 100 ])
     rotate(a = [ 45, 0, 0 ]) elektron_boxes();
 
-translate([ (table_width - digitone_keys_width()) / 2, 0, 0 ])
+translate([ (tabletop_width - digitone_keys_width()) / 2, 0, 0 ])
     digitone_keys();
