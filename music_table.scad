@@ -17,7 +17,7 @@ rack_depth = 370;
 rack_enclosure_width = rack_unit_width() + 2 * frame_beam_short_side;
 
 module tabletop() {
-  color("gray") translate([ 0, 0, -table_height ])
+  color("white") translate([ 0, 0, -table_height ])
       cube([ table_width, table_depth, table_height ]);
 }
 
@@ -33,11 +33,13 @@ module speakers() {
     put_on_stand(height = 230) presonus_eris_e5xt();
   }
 
-  color("white") translate([ 20, 250, 0 ])
+  color("#525252") translate([ 20, 250, 0 ])
       rotate_about(a = 30, pv = speaker_center) speaker_on_stand();
 
-  color("red") translate([ table_width - speaker_width - 20, 250, 0 ])
-      rotate_about(a = -30, pv = speaker_center) speaker_on_stand();
+  color("#525252")
+      translate([ table_width - speaker_width - 20, 250, 0 ])
+          rotate_about(a = -30, pv = speaker_center)
+              speaker_on_stand();
 }
 
 module elektron_boxes() {
@@ -55,7 +57,8 @@ module rack_enclosures(spacing_from_surface) {
     rack_enclosure(units = 8, tilt_angle = 10, depth = rack_depth,
                    spacing_from_surface = spacing_from_surface,
                    beam_long_side = frame_beam_long_side,
-                   beam_short_side = frame_beam_short_side) {
+                   beam_short_side = frame_beam_short_side,
+                   frame_color = "#9c4000") {
       translate([ 0, 0, start_at_unit(2) ]) rack_instrument(
           1, 230, "#900", "Focusrite Scarlett 18i20 MK3");
       translate([ 0, 0, start_at_unit(1) ]) rack_instrument(
@@ -69,7 +72,8 @@ module rack_enclosures(spacing_from_surface) {
         rack_enclosure(units = 8, tilt_angle = 10, depth = rack_depth,
                        spacing_from_surface = spacing_from_surface,
                        beam_long_side = frame_beam_long_side,
-                       beam_short_side = frame_beam_short_side) {
+                       beam_short_side = frame_beam_short_side,
+                       frame_color = "#9c4000") {
       rack_instrument(4, 100, "#900", "Nord Lead A1R");
     }
   }
