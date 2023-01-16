@@ -5,7 +5,7 @@
 
 # Rack enclosure
 
-The rack enclosure has two parts: the riser and the frame for the rack ears. The design assumes the use of 22x33mm lumber. They come in 2400mm and 3000mm lengths where I live.
+The rack enclosure has two parts: the riser and the frame for the rack ears. The design assumes the use of 21x33mm lumber. They come in 2400mm and 3000mm lengths where I live.
 
 ## BOM for two rack enclosures
 
