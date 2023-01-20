@@ -80,6 +80,8 @@ module rack_enclosures(spacing_from_surface) {
                        beam_long_side = frame_beam_long_side,
                        beam_short_side = frame_beam_short_side,
                        frame_color = "#9c4000") {
+                       rack_instrument(4, 100, "#900", "Nord Rack 2");
+                       translate([ 0, 0, start_at_unit(4) ])
       rack_instrument(4, 100, "#900", "Nord Lead A1R");
     }
   }
