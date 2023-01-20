@@ -15,16 +15,16 @@ The rack ear used is an [Adam Hall 19" Parts 61535 B 8](https://www.adamhall.com
 
 ## BOM for two rack enclosures
 
-This BOM assumes that the pieces are cut from a 2400mm long piece. 5mm extra is added to the length of each item when trying to divide up lumber between them to account for the width of the saw blade and the occasional mistake.
+This BOM assumes that the pieces are cut from a 2400mm long piece. 5mm extra is added to the length of each item when trying to divide up lumber between them to account for the width of the saw blade and the occasional mistake. Everything .5 and above is rounded up to the nearest millimeter.
 
-| Length  | Count | Remarks                                                          |
-| ------- | ----- | ---------------------------------------------------------------- |
-| 191mm   | 8     | 90 degree ends                                                   |
-| 328mm   | 4     | 90 degree ends                                                   |
-| 349mm   | 8     | 90 degree ends                                                   |
-| 375.6mm | 4     | 10 degree across the long side on one end                        |
-| 454.7mm | 4     | 36.8 degree acros the long side on one end and 43.2 on the other |
-| 536.9mm | 8     | 90 degree ends                                                   |
+| Length | Count | Remarks                                                          |
+| ------ | ----- | ---------------------------------------------------------------- |
+| 191mm  | 8     | 90 degree ends                                                   |
+| 328mm  | 4     | 90 degree ends                                                   |
+| 349mm  | 8     | 90 degree ends                                                   |
+| 376mm  | 4     | 10 degree across the long side on one end                        |
+| 455mm  | 4     | 36.8 degree acros the long side on one end and 43.2 on the other |
+| 537mm  | 8     | 90 degree ends                                                   |
 
 <table>
   <thead>
@@ -69,48 +69,48 @@ This BOM assumes that the pieces are cut from a 2400mm long piece. 5mm extra is 
       <td>90 degree ends</td>
     </tr>
     <tr>
-      <td>454.7mm</td>
+      <td>455mm</td>
       <td>4</td>
-      <td>1818.8+20mm</td>
-      <td>32.2mm</td>
+      <td>1820+20mm</td>
+      <td>31mm</td>
       <td>36.8 degree acros the long side on one end and 43.2 on the other</td>
     </tr>
     <tr>
       <td rowspan="2">#3</td>
-      <td>375.6mm</td>
+      <td>376mm</td>
       <td>4</td>
-      <td>1502.4+20mm</td>
-      <td>877.6mm</td>
+      <td>1504+20mm</td>
+      <td>876mm</td>
       <td>10 degree across the long side on one end</td>
     </tr>
     <tr>
       <td>349mm</td>
       <td>1</td>
       <td>349+5mm</td>
-      <td>580.4mm</td>
+      <td>522mm</td>
       <td>90 degree ends</td>
     </tr>
     <tr>
       <td>#4</td>
-      <td>536.9mm</td>
+      <td>537mm</td>
       <td>4</td>
-      <td>2147.6+20mm</td>
-      <td>232.4mm</td>
+      <td>2148+20mm</td>
+      <td>232mm</td>
       <td>90 degree ends</td>
     </tr>
     <tr>
       <td rowspan="2">#5</td>
-      <td>536.9mm</td>
+      <td>537mm</td>
       <td>3</td>
-      <td>1610.7+15mm</td>
-      <td>774.3mm</td>
+      <td>1611+15mm</td>
+      <td>774mm</td>
       <td>90 degree ends</td>
     </tr>
     <tr>
       <td>349mm</td>
       <td>2</td>
       <td>698+10mm</td>
-      <td>66.3mm</td>
+      <td>66mm</td>
       <td>90 degree ends</td>
     </tr>
     <tr>
@@ -122,10 +122,10 @@ This BOM assumes that the pieces are cut from a 2400mm long piece. 5mm extra is 
       <td>90 degree ends</td>
     </tr>
     <tr>
-      <td>536.9mm</td>
+      <td>537mm</td>
       <td>1</td>
-      <td>536.9+5mm</td>
-      <td>88.1mm</td>
+      <td>537+5mm</td>
+      <td>88mm</td>
       <td>90 degree ends</td>
     </tr>
   </tbody>
@@ -133,32 +133,94 @@ This BOM assumes that the pieces are cut from a 2400mm long piece. 5mm extra is 
 
 ### Cutting the pieces to length
 
-1. Adjust the stopper to 191mm
-2. Cut 7 pieces from lumber #1
-3. Cut 1 piece from lumber #2
-4. Adjust the stopper to 328mm
-5. Cut 3 pieces from lumber #1
-6. Cut 1 piece from lumber #2
-7. Adjust the stopper to 454.7mm
-8. Cut 4 pieces from lumber #2
-9. Adjust the stopper to 375.6mm
-10. Cut 4 pieces from lumber #3
-11. Adjust the stopper to 349mm
-12. Cut 1 piece from lumber #3
-13. Cut 2 pieces from lumber #5
-14. Cut 5 pieces from lumber #6
-15. Adjust the stopper to 536.9mm
-16. Cut 4 pieces from lumber #4
-17. Cut 3 pieces from lumber #5
-18. Cut 1 piece from lumber #6
+I did not want to have to change and then re-adjust the stopper between cuts so I made up the following order. The idea is that once the stopper is set, all pieces for that specific length are cut, sometimes from different pieces of lumber. A total of six 2400mm long pieces of lumber is required.
+
+<table>
+  <thead>
+    <tr>
+      <th>Stopper length</th>
+      <th>#</th>
+      <th>Lumber #</th>
+      <th>Count</th>
+    </tr>
+  <thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">191mm</td>
+      <td>1</td>
+      <td>#1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>#2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td rowspan="2">328mm</td>
+      <td>3</td>
+      <td>#1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>#2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td rowspan="1">455mm</td>
+      <td>5</td>
+      <td>#2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td rowspan="1">376mm</td>
+      <td>6</td>
+      <td>#3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td rowspan="3">349mm</td>
+      <td>7</td>
+      <td>#3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>#5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>#6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td rowspan="3">537mm</td>
+      <td>10</td>
+      <td>#4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>#5</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>#6</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Cutting the angled pieces
 
-1. Adjust the cutting angle to 10 degress off and adjust the stopper for the 375.6mm piece
+1. Adjust the cutting angle to 10 degress off and adjust the stopper for the 376mm piece
 2. Turn the piece so that the angled end goes across the long side
-3. Cut the 375.6mm pieces
-4. Adjust the cutting angle to 36.8 off and adjust the stopper for the 454.7mm piece
+3. Cut the 376mm pieces
+4. Adjust the cutting angle to 36.8 off and adjust the stopper for the 455mm piece
 5. Turn the piece so that the angled end goes across the long side
-6. Cut the 454.7mm pieces
+6. Cut the 455mm pieces
 7. Adjust the angle to 43.2 degrees without changing the stopper
-8. Cut the other end of the 454.7mm pieces, when done, the piece should form a trapezoid
+8. Cut the other end of the 455mm pieces, when done, the piece should form a trapezoid
