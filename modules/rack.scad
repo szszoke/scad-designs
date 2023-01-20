@@ -12,6 +12,10 @@ module rack_enclosure(units = 0, depth, tilt_angle, beam_long_side,
                       beam_short_side, spacing_from_surface,
                       frame_color) {
   outer_width = rack_unit_width() + 2 * beam_short_side;
+  // when the tilting angle is greater than zero, additional space is
+  // needed so that the rack ears can fit
+  offset_due_tilt = beam_long_side * sin(tilt_angle) /
+                      sin(90 - tilt_angle);
 
   module rack_beam(length, rotation = [ 0, 0, 0 ], a_start_short,
                    a_start_long, a_stop_short, a_stop_long, ) {
@@ -74,7 +78,7 @@ module rack_enclosure(units = 0, depth, tilt_angle, beam_long_side,
   }
 
   module enclosure(front_tilt_angle) {
-    frontal_beam_length = unit_to_length(units);
+    frontal_beam_length = unit_to_length(units) + offset_due_tilt;
 
     module vertical_enclosure_beam(length, start_angle, stop_angle) {
       translate([ 0, beam_long_side, 0 ]) rotate([ 90, -90, 90 ])
@@ -130,7 +134,7 @@ module rack_enclosure(units = 0, depth, tilt_angle, beam_long_side,
         enclosure(front_tilt_angle = tilt_angle);
   }
 
-  translate(v = [ beam_short_side, 0, spacing_from_surface ])
+  translate(v = [ beam_short_side, 0, spacing_from_surface + offset_due_tilt ])
       rotate(a = [ -tilt_angle, 0, 0 ]) children();
 }
 
