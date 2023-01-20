@@ -14,10 +14,9 @@ frame_beam_short_side = 21;
 rack_max_units = 8;
 rack_tilt_angle = 10;
 rack_depth = 370;
+rack_ear_width = 22;
 
 speaker_angle = 30;
-
-rack_enclosure_width = rack_unit_width() + 2 * frame_beam_short_side;
 
 module tabletop() {
   color("white") translate([ 0, 0, -tabletop_height ])
@@ -56,33 +55,45 @@ module elektron_boxes() {
   translate(v = [ x_offset(3), 0, 0 ]) analog_heat();
 }
 
+rack_enclosure_width =
+    rack_unit_width() + 2 * (frame_beam_short_side + rack_ear_width);
+
 module rack_enclosures(spacing_from_surface) {
   translate(v = [ 0, tabletop_depth - rack_depth, 0 ]) {
     rack_enclosure(units = rack_max_units,
                    tilt_angle = rack_tilt_angle, depth = rack_depth,
+                   override_tilt_offset = 20,
+                   rack_ear_width = rack_ear_width,
                    spacing_from_surface = spacing_from_surface,
                    beam_long_side = frame_beam_long_side,
                    beam_short_side = frame_beam_short_side,
                    frame_color = "#9c4000") {
       translate([ 0, 0, start_at_unit(2) ]) rack_instrument(
-          1, 230, "#900", "Focusrite Scarlett 18i20 MK3");
+          units = 1, depth = 230, rack_ear_width = rack_ear_width,
+          c = "#900", label = "Focusrite Scarlett 18i20 MK3");
       translate([ 0, 0, start_at_unit(1) ]) rack_instrument(
-          1, 230, "#900", "Focusrite Scarlett 18i20 MK3");
+          units = 1, depth = 230, rack_ear_width = rack_ear_width,
+          c = "#900", label = "Focusrite Scarlett 18i20 MK3");
 
-      rack_instrument(1, 70, "#232f59", "Samson S-patch plus");
+      rack_instrument(units = 1, depth = 70,
+                      rack_ear_width = rack_ear_width, c = "#232f59",
+                      label = "Samson S-patch plus");
     }
 
-    translate([ rack_unit_width() + frame_beam_short_side * 2, 0, 0 ])
-        rack_enclosure(units = rack_max_units,
-                       tilt_angle = rack_tilt_angle,
-                       depth = rack_depth,
-                       spacing_from_surface = spacing_from_surface,
-                       beam_long_side = frame_beam_long_side,
-                       beam_short_side = frame_beam_short_side,
-                       frame_color = "#9c4000") {
-                       rack_instrument(4, 100, "#900", "Nord Rack 2");
-                       translate([ 0, 0, start_at_unit(4) ])
-      rack_instrument(4, 100, "#900", "Nord Lead A1R");
+    translate([ rack_enclosure_width, 0, 0 ]) rack_enclosure(
+        units = rack_max_units, tilt_angle = rack_tilt_angle,
+        depth = rack_depth, override_tilt_offset = 20,
+        rack_ear_width = rack_ear_width,
+        spacing_from_surface = spacing_from_surface,
+        beam_long_side = frame_beam_long_side,
+        beam_short_side = frame_beam_short_side,
+        frame_color = "#9c4000") {
+      rack_instrument(units = 4, depth = 100,
+                      rack_ear_width = rack_ear_width, c = "#900",
+                      label = "Nord Rack 2");
+      translate([ 0, 0, start_at_unit(4) ]) rack_instrument(
+          units = 4, depth = 100, rack_ear_width = rack_ear_width,
+          c = "#900", label = "Nord Lead A1R");
     }
   }
 }
