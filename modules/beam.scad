@@ -2,6 +2,10 @@ nothing = 0.01;
 
 module beam(length, long_side, short_side, a_start_short,
             a_start_long, a_stop_short, a_stop_long) {
+  echo(str("BOM:beam:length=", length, ",long_side=", long_side,
+           ",short_side=", short_side, ",a_start_short=", a_start_short,
+           ",a_start_long=", a_start_long, ",a_stop_short=",
+           a_stop_short, ",a_stop_long=", a_stop_long));
   difference() {
     cube([ length, long_side, short_side ]);
 
