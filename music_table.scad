@@ -94,7 +94,7 @@ translate([ (tabletop_width - 2 * rack_enclosure_width) / 2, 0, 0 ])
 translate([
   (tabletop_width - 4 * digi_box_width() - 10) / 2, 210,
   digitone_keys_height() + 10
-]) rotate(a = [ 45, 0, 0 ]) elektron_boxes();
+]) rotate(a = [ 40, 0, 0 ]) elektron_boxes();
 
 translate([ (tabletop_width - digitone_keys_width()) / 2, 0, 0 ])
     digitone_keys();
