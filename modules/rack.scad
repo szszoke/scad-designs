@@ -2,17 +2,19 @@ use <beam.scad>
 use <math.scad>
 use <rotate.scad>
 
-function rack_unit_width() = 482.6;
+function rack_unit_width() = 450.85;
 function rack_unit_height() = 44.45;
 
 function unit_to_length(units) = units * rack_unit_height();
 function start_at_unit(unit) = unit * rack_unit_height();
 
-module rack_enclosure(units = 0, depth, tilt_angle,
+module rack_enclosure(units = 0, depth, tilt_angle, rack_ear_width,
                       override_tilt_offset, beam_long_side,
                       beam_short_side, spacing_from_surface,
                       frame_color) {
-  outer_width = rack_unit_width() + 2 * beam_short_side;
+  outer_width =
+      rack_unit_width() + 2 * (beam_short_side + rack_ear_width);
+
   // when the tilting angle is greater than zero, additional space is
   // needed so that the rack ears can fit
   offset_due_tilt =
@@ -142,16 +144,17 @@ module rack_enclosure(units = 0, depth, tilt_angle,
   ]) rotate(a = [ -tilt_angle, 0, 0 ]) children();
 }
 
-module rack_instrument(units, depth, c, label) {
+module rack_instrument(units, depth, rack_ear_width, c, label) {
   height = unit_to_length(units);
   module instrument() {
-    color("black") cube([ 22, 22, height ]);
+    color("black") cube([ rack_ear_width, rack_ear_width, height ]);
 
-    translate([ rack_unit_width() - 22, 0, 0 ]) color("black")
-        cube([ 22, 22, height ]);
+    translate([ rack_unit_width() + rack_ear_width, 0, 0 ])
+        color("black")
+            cube([ rack_ear_width, rack_ear_width, height ]);
 
-    color(c) translate([ 22, 0, 0 ])
-        cube([ rack_unit_width() - 44, depth, height ]);
+    color(c) translate([ rack_ear_width, 0, 0 ]) cube(
+        [ rack_unit_width(), depth, height ]);
   }
 
   union() {
@@ -165,11 +168,11 @@ module rack_instrument(units, depth, c, label) {
   }
 }
 
-rack_enclosure(units = 8, tilt_angle = 10, depth = 370,
+rack_enclosure(units = 8, tilt_angle = 10, rack_ear_width = 22, depth = 370,
                spacing_from_surface = 270, beam_long_side = 33,
                beam_short_side = 21, frame_color = "#9c4000") {
   for (i = [0:1:7]) {
     translate([ 0, 0, start_at_unit(i) ])
-        rack_instrument(units = 1, depth = 200);
+        rack_instrument(units = 1, depth = 200, rack_ear_width = 22);
   }
 }
